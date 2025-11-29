@@ -1,6 +1,6 @@
 {
-  "name": "decode-ifc-unicode",
-  "short_name": "decode-ifc-unicode",
+  "name": "src",
+  "short_name": "src",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#FFFFFF",
