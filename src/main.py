@@ -21,14 +21,22 @@ def main(page: ft.Page):
         page.update()
 
     tb1 = ft.TextField(label="Введите текст для конвертации",
+                       value="\X2\\041F04400438043C04350440\X0\\",
+                       autofocus=True,
                        on_change=textbox_changed,
+                       on_focus=textbox_changed,
                        multiline=True,
-                       autofocus=True)
-    tb2 = ft.TextField(label="",
+                    #    text_align=ft.TextAlign.CENTER,
+                    #    prefix_text="\X2\\",
+                    #    suffix_text="\X0\\"
+                       )
+    tb2 = ft.TextField(label="Результат",
                        multiline=True,
                        read_only=True,
                        border=ft.InputBorder.NONE,
                        filled=True)
+    
+    info = ft.Text("ⓘ Вставьте текст вида «\X2\…\X0\» в верхнее поле", selectable=True, theme_style=ft.TextThemeStyle.LABEL_MEDIUM)
 
     page.add(
         ft.SafeArea(
@@ -36,7 +44,8 @@ def main(page: ft.Page):
                 ft.Column(
                     controls=[
                         tb1,
-                        tb2],
+                        tb2,
+                        info],
                     width=800,
                     alignment=ft.MainAxisAlignment.CENTER,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
